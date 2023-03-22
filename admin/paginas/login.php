@@ -12,7 +12,11 @@
 
        $dados = $consulta->fetch(PDO::FETCH_OBJ);
 
-       var_dump($dados); 
+        if (!isset($dados->id)) {
+            mensagenErro("Usuario não encontrado ou invalido.");
+        }
+        
+        
     }
 ?>
 <div class="login">
